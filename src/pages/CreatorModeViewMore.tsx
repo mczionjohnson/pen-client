@@ -60,7 +60,7 @@ function CreatorModeViewMore() {
     handleShow();
   };
 
-  const deleteModal = () => {
+  const deleteModal = (event) => {
     // calls modal from bootstrap
     handleShow2();
   };
@@ -232,7 +232,7 @@ function CreatorModeViewMore() {
                     <Form.Check 
                       type="switch"
                       id="custom-switch"
-                      label="send this whistle"
+                      label="post this whistle"
                       onChange={publish}
                     />
                   </div>
@@ -294,7 +294,7 @@ function CreatorModeViewMore() {
                     Edit
                   </Button>
                   <Button
-                    onClick={() => deleteModal()}
+                    onClick={() => deleteModal(event)}
                     variant="outline-danger"
                     className="createBtn"
                   >
