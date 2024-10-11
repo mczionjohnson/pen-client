@@ -53,12 +53,12 @@ function UserProfile() {
       <div>
         <h4>Please Log in</h4>
         <>
-          <Button
+        <Button
             variant="outline-info"
             className="buttonNav"
-            onClick={() => navigate("/whistles")}
+            onClick={() => navigate("/login")}
           >
-           HOME
+            Go to login page
           </Button>
         </>
       </div>
@@ -93,42 +93,42 @@ function UserProfile() {
       <div>
         {profile ? (
           <div key={profile.email} className="mappedPost">
-            <h4>{profile.username}</h4>
+            <h4>Hi {profile.username}</h4>
             <p>{profile.email}</p>
 
             <p>
-              <span>Ticket(s) bought on Eventful:</span>{" "}
-              {profile.eventTickets.length}
+              <span>Created</span>{" "}
+              {profile.whistleCreated.length}
             </p>
 
             <Button
               variant="outline-success"
               className="buttonNav"
-              onClick={() => navigate("/user_tickets")}
+              onClick={() => navigate("/user_whistles")}
             >
-              VIEW TICKETS
+              Created
             </Button>
 
             <p>
-              <span>Event(s) Attended:</span> {profile.eventAttended.length}
+              <span>Bookmark(s):</span> {profile.whistleSaved.length}
             </p>
             <Button
               variant="outline-success"
               className="buttonNav"
-              onClick={() => navigate("/event_attended")}
+              onClick={() => navigate("/user_bookmark")}
             >
-              VIEW EVENTS ATTENDED
+           Bookmark
             </Button>
             <p>
-              <span>Event(s) created on Eventful:</span>{" "}
-              {profile.eventCreated.length}
+              <span>Likes</span>
+              {profile.whistleLiked.length}
             </p>
             <Button
               variant="outline-success"
               className="buttonNav"
-              onClick={() => navigate("/event_created")}
+              onClick={() => navigate("/user_likes")}
             >
-              VIEW YOUR EVENTS
+            Likes
             </Button>
           </div>
         ) : (
@@ -145,7 +145,7 @@ function UserProfile() {
       </Button>
 
       <Button variant="outline-danger" className="buttonNav" onClick={logoutUser}>
-        LOG OUT
+        Logout
       </Button>
     </div>
   );

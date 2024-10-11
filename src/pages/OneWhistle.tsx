@@ -10,7 +10,6 @@ import "../App.css";
 function OneWhistle() {
   //  declare navigate function
   const navigate = useNavigate();
-
   const location = useLocation();
 
   // creating an array to store data
@@ -182,6 +181,7 @@ function OneWhistle() {
             ))
           : ""}
       </div>
+
       <Button
         variant="outline-dark"
         className="buttonNav"
