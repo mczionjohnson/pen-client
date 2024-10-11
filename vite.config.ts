@@ -1,4 +1,4 @@
-import http from "https";
+// import http from "https";
 
 // import dotenv from 'dotenv';
 // dotenv.config();
@@ -14,8 +14,8 @@ export default defineConfig({
   server: {
     proxy: {
       "/proxy": {
-        // target: "https://pen.hostless.app/",
-        target: "http://localhost:8000/",
+        target: "https://pen.hostless.app/",
+        // target: "http://localhost:8000/",
         changeOrigin: true,
         // secure: false,
         // agent: new http.Agent(),
