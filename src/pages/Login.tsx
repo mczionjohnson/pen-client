@@ -45,7 +45,7 @@ function Login() {
     await axios
       .post("proxy/api/v1/login", post)
       .then((res) => {
-        console.log(res.status), navigate("/whistles");
+        console.log(res.status), navigate("/");
       })
       .catch((err) => {
         console.error("Error fetching event:", err);

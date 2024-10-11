@@ -76,14 +76,14 @@ function UserProfile() {
       {/* <Button
         variant="outline-info"
         className="buttonNav"
-        onClick={() => navigate("/whistles")}
+        onClick={() => navigate("/")}
       >
         HOME
       </Button> */}
       <Button
         variant="outline-primary"
         className="buttonNav"
-        onClick={() => navigate("/whistles")}
+        onClick={() => navigate("/")}
       >
         Home
       </Button>

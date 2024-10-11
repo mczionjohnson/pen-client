@@ -43,7 +43,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/whistles",
+    path: "/",
     element: <Whistles />,
     errorElement: <ErrorPage />,
   },

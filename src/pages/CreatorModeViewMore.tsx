@@ -160,7 +160,7 @@ function CreatorModeViewMore() {
       <Button
         variant="outline-info"
         className="buttonNav"
-        onClick={() => navigate("/whistles")}
+        onClick={() => navigate("/")}
       >
         HOME
       </Button>
