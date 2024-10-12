@@ -116,7 +116,7 @@ function CreatorModeView() {
       >
         PROFILE
       </Button>
-      <h1>your Whistle</h1>
+      {/* <h1>your Whistle</h1> */}
 
       {/* modal lines are copied from react-bootstrap */}
       <Modal show={show} onHide={handleClose}>

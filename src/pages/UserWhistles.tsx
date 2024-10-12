@@ -76,7 +76,7 @@ function UserWhistles() {
       >
         PROFILE
       </Button>
-      <h1>Whistles</h1>
+      <h1>Created by you</h1>
 
       <div>
         {tickets
