@@ -20,6 +20,8 @@ function CreatorModeViewMore() {
   const [errorCode, setErrorCode] = useState("");
 
   const [updatedEvent, setUpdatedEvent] = useState({});
+  const [deleting, setDeletion] = useState({});
+
   const [updatedState, setUpdatedState] = useState("");
 
   // this lines are copied from react-bootstrap
@@ -61,6 +63,11 @@ function CreatorModeViewMore() {
   };
 
   const deleteModal = (event) => {
+    // console.log(event);
+
+    setDeletion(event);
+    // console.log(deleting);
+
     // calls modal from bootstrap
     handleShow2();
   };
@@ -106,12 +113,11 @@ function CreatorModeViewMore() {
   };
 
   // delete function
-  const deleteEvent = (_id) => {
-    const id = _id;
+  const deleteEvent = (deleting) => {
     // console.log(id);
     // axios for backend
     axios
-      .delete(`proxy/api/v1/user/mywhistles/${id}`)
+      .delete(`proxy/api/v1/user/mywhistles/${deleting._id}`)
       .then(() => {
         navigate("/user_whistles");
       })
@@ -229,7 +235,7 @@ function CreatorModeViewMore() {
                     State:
                   </label>
                   <div className="formInput col-sm-10">
-                    <Form.Check 
+                    <Form.Check
                       type="switch"
                       id="custom-switch"
                       label="post this whistle"
@@ -263,12 +269,36 @@ function CreatorModeViewMore() {
         <Modal.Header closeButton>
           <Modal.Title>Are you sure you want to delete?</Modal.Title>
         </Modal.Header>
-        <Modal.Body>This action cannot be reversed</Modal.Body>
+        <Modal.Body>
+          This action cannot be reversed
+          <Form>
+            <Form.Group>
+              <div className="mb-3 row">
+                <label
+                  htmlFor="staticEmail"
+                  className="col-sm-2 col-form-label"
+                >
+                  Body:
+                </label>
+                <div className="formInput col-sm-10">
+                  <Form.Control
+                    placeholder="body"
+                    name="body"
+                    // check for data in updatedPost or return null
+                    value={deleting.body ? deleting.body : ""}
+                    // function to pre fill the input field
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+            </Form.Group>
+          </Form>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose2}>
             Cancel
           </Button>
-          <Button variant="danger" onClick={() => deleteEvent(event._id)}>
+          <Button variant="danger" onClick={() => deleteEvent(deleting)}>
             Delete
           </Button>
         </Modal.Footer>
@@ -298,7 +328,7 @@ function CreatorModeViewMore() {
                     variant="outline-danger"
                     className="createBtn"
                   >
-                    delete
+                    Delete
                   </Button>
                 </div>
               </div>

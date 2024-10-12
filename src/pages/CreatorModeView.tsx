@@ -179,14 +179,14 @@ function CreatorModeView() {
                     className="createBtn"
                     onClick={() => share(event._id)}
                   >
-                    SHARE ON SOCIAL
+                    Share on social
                   </Button>
                   <Button
                     onClick={() => moreActions(event._id)}
-                    variant="outline-danger"
+                    variant="outline-success"
                     className="createBtn"
                   >
-                    MORE
+                    More
                   </Button>
                 </div>
               </div>
